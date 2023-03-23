@@ -1,6 +1,7 @@
+`use strict`;
 // Objects 1. BetweenDates
 
-function durationBetweenDates(startDate = new Date(), endDate = new Date(), dimension = 'seconds') {
+function durationBetweenDates (startDate = 'now', endDate = 'now', dimension = 'seconds') {
     const units = {
       days: 86400000,
       hours: 3600000,
@@ -8,8 +9,8 @@ function durationBetweenDates(startDate = new Date(), endDate = new Date(), dime
       seconds: 1000
     };
     
-    const startTime = new Date(startDate).getTime();
-    const endTime = new Date(endDate).getTime();
+    const startTime = Date.parse(startDate);
+    const endTime = Date.parse(endDate);
     
     const diff = Math.abs(startTime - endTime);
     const result = Math.floor(diff / units[dimension]);
@@ -29,13 +30,13 @@ const priceData = {
     oRAngGEs: '48.7584',
   };
   
-  function optimizer(priceData) {
-    const result = {};
-    for (const [key, value] of Object.entries(priceData)) {
-      result[key.toLowerCase()] = Math.round(parseFloat(value) * 100) / 100;
-    }
-    return result;
-  }
+  const optimizer = (priceData) => {
+    return Object.entries(priceData)
+      .reduce((result, [key, value]) => {
+        result[key.toLowerCase()] = Math.round(parseFloat(value) * 100) / 100;
+        return result;
+      }, {});
+  };
   
   const result = optimizer(priceData);
   console.log(result);
@@ -46,9 +47,9 @@ const priceData = {
 function recursiveOddSumTo(number) {
     if (number <= 0) {
       return 0;
-    } else if (number % 2 === 0) {
+    } if (number % 2 === 0) {
       return recursiveOddSumTo(number - 1);
-    } else {
+    } {
       return number + recursiveOddSumTo(number - 2);
     }
   }
