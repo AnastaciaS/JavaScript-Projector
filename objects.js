@@ -1,24 +1,29 @@
 `use strict`;
 // Objects 1. BetweenDates
 
-function durationBetweenDates (startDate = 'now', endDate = 'now', dimension = 'seconds') {
-    const units = {
-      days: 86400000,
-      hours: 3600000,
-      minutes: 60000,
-      seconds: 1000
-    };
-    
-    const startTime = Date.parse(startDate);
-    const endTime = Date.parse(endDate);
-    
-    const diff = Math.abs(startTime - endTime);
-    const result = Math.floor(diff / units[dimension]);
-    
-    return `${result} ${dimension}`;
-  }
+function durationBetweenDates(startDate = 'now', endDate = 'now', dimension = 'seconds') {
+  const units = {
+    days: 86400000,
+    hours: 3600000,
+    minutes: 60000,
+    seconds: 1000
+  };
   
-  console.log(durationBetweenDates('21 Jul 2025', '19 Mar 2022', 'seconds'));
+  if (startDate === 'now' && endDate === 'now') {
+    return 'Default period of time';
+  }
+
+  const startTime = Date.parse(startDate);
+  const endTime = Date.parse(endDate);
+
+  const diff = Math.abs(startTime - endTime);
+  const result = Math.floor(diff / units[dimension]);
+
+  return `${result} ${dimension}`;
+}
+
+console.log(durationBetweenDates('21 Jul 2025', '19 Mar 2022', 'seconds'));
+console.log(durationBetweenDates());
 
 
 
