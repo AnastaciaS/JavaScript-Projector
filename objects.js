@@ -1,17 +1,13 @@
 `use strict`;
 // Objects 1. BetweenDates
 
-function durationBetweenDates(startDate = 'now', endDate = 'now', dimension = 'seconds') {
+function durationBetweenDates (startDate = '02 Sep 1994', endDate = '30 Mar 2023', dimension = 'seconds') {
   const units = {
     days: 86400000,
     hours: 3600000,
     minutes: 60000,
     seconds: 1000
   };
-  
-  if (startDate === 'now' && endDate === 'now') {
-    return 'Default period of time';
-  }
 
   const startTime = Date.parse(startDate);
   const endTime = Date.parse(endDate);
@@ -52,11 +48,12 @@ const priceData = {
 function recursiveOddSumTo(number) {
     if (number <= 0) {
       return 0;
-    } if (number % 2 === 0) {
+    } 
+    if (number % 2 === 0) {
       return recursiveOddSumTo(number - 1);
-    } {
+    } 
       return number + recursiveOddSumTo(number - 2);
-    }
+    
   }
   
   console.log(recursiveOddSumTo(30));
