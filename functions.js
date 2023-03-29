@@ -13,14 +13,14 @@ console.log(addThemAll(5,5,10));
 
 //Function 2. closureMultiply
 function multiply(a) {
-    return function(b) {
-      return a * b;
-    }
+  return (b) => {
+    return a * b;
   }
-  
-  console.log(multiply(5)(5));
-  console.log(multiply(2)(-2));	 
-  console.log(multiply(4)(3));
+}
+
+console.log(multiply(5)(5));
+console.log(multiply(2)(-2));	 
+console.log(multiply(4)(3));
 
 //Function 3. movieSorting
 const movies = [ {
