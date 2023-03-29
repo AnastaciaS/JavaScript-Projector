@@ -50,7 +50,7 @@ const movies = [ {
   ]
   
   function byProperty(prop, direction) {
-    return function(a, b) {
+    return (a, b) => {
       let result = 0;
       if (a[prop] < b[prop]) {
         result = -1;
