@@ -3,16 +3,12 @@
 
 //Function 1. addThemAll
 function addThemAll(...args) {
-    let sum = 0;
-    for (let i = 0; i < args.length; i++) {
-    sum += args[i];
-    }
-    return sum;
-    }
-    
-    console.log(addThemAll(2,4));
-    console.log(addThemAll(1,2,3,4));
-    console.log(addThemAll(5,5,10));
+  return args.reduce((acc, curr) => acc + curr, 0);
+}
+
+console.log(addThemAll(2,4));
+console.log(addThemAll(1,2,3,4));
+console.log(addThemAll(5,5,10));
 
 
 //Function 2. closureMultiply
