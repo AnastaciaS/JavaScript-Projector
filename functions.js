@@ -71,35 +71,31 @@ const movies = [ {
 //Function 4. detonatorTimer
 //setInterval
 function detonatorTimer(delay) {
-  let timer = setInterval(() => {
-    console.log(delay);
-    delay--;
-    if (delay < 0) {
-      clearInterval(timer);
-      console.log('BOOM!');
-    }
-  }, 1000);
+  if (delay < 0) {
+    console.log('BOOM!');
+    return;
+  }
+  
+  console.log(delay);
+  setTimeout(() => detonatorTimer(delay - 1), 1000);
 }
 
-console.log (detonatorTimer(5));
+console.log(detonatorTimer(5));
 
 
 //setTimeout
 function detonatorTimer(delay) {
-  function countdown() {
-    console.log(delay);
-    delay--;
-    if (delay < 0) {
-      console.log('BOOM!');
-    } else {
-      setTimeout(countdown, 1000);
-    }
+  if (delay < 0) {
+    console.log('BOOM!');
+    return;
   }
-
-  setTimeout(countdown, 1000);
+  
+  console.log(delay);
+  delay--;
+  setTimeout(() => detonatorTimer(delay), 1000);
 }
 
-console.log (detonatorTimer(5));
+console.log(detonatorTimer(5));
 
 //Function 5. objectFeatures
 let me = {
