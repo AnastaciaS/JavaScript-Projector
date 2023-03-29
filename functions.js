@@ -99,42 +99,13 @@ console.log(detonatorTimer(5));
 
 //Function 5. objectFeatures
 let me = {
-    name: 'Anastasiia',
-    gender: 'female',
-    age: 28,
-    hobby: 'watercolor paintings',
-    freeTime: 'exercise',
-    myNeeds: 'vacation',
-    relatives: 'brother',
-    introduce () {
-    
-    console.log (`My name is ${this.name} and I'm ${this.gender}`);
-    },
-    family () {
-    console.log (`I love my ${this.relatives}, he is ${this.age-8} old`)
-    },
-    timeSpending () {
-    console.log (`I usually work a lot, if I'm not sitting at the computer, then I ${this.freeTime}`);
-    },
-    plans(){
-    console.log (`If I will be healthy, I will definitely plan a ${this.myNeeds}, and do some ${this.hobby}`);
-    }
-    }
-    
-    me.introduce ();
-    me.family ();
-    me.timeSpending ();
-    me.plans ();
-    
-//Function 6. bind
-let me = {
-    name: 'Anastasiia',
-    gender: 'female',
-    age: 28,
-    hobby: 'watercolor paintings',
-    freeTime: 'exercise',
-    myNeeds: 'vacation',
-    relatives: 'brother',
+  name: 'Anastasiia',
+  gender: 'female',
+  age: 28,
+  hobby: 'watercolor paintings',
+  freeTime: 'exercise',
+  myNeeds: 'vacation',
+  relatives: 'brother',
     introduce () {
       console.log (`My name is ${this.name} and I'm ${this.gender}`);
     },
@@ -147,6 +118,34 @@ let me = {
     plans(){
       console.log (`If I will be healthy, I will definitely plan a ${this.myNeeds}, and do some ${this.hobby}`);
     }
+    }
+    
+  me.introduce ();
+  me.family ();
+  me.timeSpending ();
+  me.plans ();
+    
+//Function 6. bind
+let me = {
+  name: 'Anastasiia',
+  gender: 'female',
+  age: 28,
+  hobby: 'watercolor paintings',
+  freeTime: 'exercise',
+  myNeeds: 'vacation',
+  relatives: 'brother',
+    introduce () {
+      console.log (`My name is ${this.name} and I'm ${this.gender}`);
+     },
+    family () {
+      console.log (`I love my ${this.relatives}, he is ${this.age-8} old`)
+     },
+    timeSpending () {
+      console.log (`I usually work a lot, if I'm not sitting at the computer, then I ${this.freeTime}`);
+     },
+    plans(){
+      console.log (`If I will be healthy, I will definitely plan a ${this.myNeeds}, and do some ${this.hobby}`);
+     }
   }
   
   const boundIntroduce = me.introduce.bind(me);
@@ -170,7 +169,7 @@ function someFunction(a, b) {
   }
   
   function slower(func, seconds) {
-    return function(...args) {
+    return (...args) => {
       console.log(`Chill out, you will get your result in ${seconds} seconds.`);
       setTimeout(() => {
         const result = func(...args);
