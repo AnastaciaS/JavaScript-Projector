@@ -1,4 +1,4 @@
-const listElement = document.querySelector('#list');
+/*const listElement = document.querySelector('#list');
 
 export const renderList = (tasksList) => {
     listElement.innerHTML = '';
@@ -18,4 +18,16 @@ export const renderList = (tasksList) => {
         listElement.append(taskElement);
     });
 
+};*/
+
+const listElement = document.querySelector ('#List')
+
+export const renderList = (tasksList) => {
+    console.log ('render.tasksList', tasksList);
+
+    list.array.forEach((task) => {
+        const taskElement = document.createElement (tagName: 'li');
+        taskElement.innerHTML = `<p>${task}</p>`;
+        listElement.append (taskElement)
+    });
 };

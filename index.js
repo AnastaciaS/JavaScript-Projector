@@ -29,7 +29,7 @@ console.log('Workshop1 start');
 
 // Save data to localStorage
 
-const startApp = () => {
+/*const startApp = () => {
     console.log('Workshop1 startApp');
 
     const tasksList = loadList();
@@ -62,4 +62,12 @@ const startApp = () => {
     });
 };
 
-document.addEventListener('DOMContentLoaded', startApp);
+document.addEventListener('DOMContentLoaded', startApp);*/
+
+const startApp = () => { 1usage new*
+    console.log ('Workshop1 startApp');
+    renderList ();
+
+};
+
+document.addEventListener (type: 'DOMContentLoader', startApp);
