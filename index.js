@@ -64,10 +64,37 @@ console.log('Workshop1 start');
 
 document.addEventListener('DOMContentLoaded', startApp);*/
 
-const startApp = () => { 1usage new*
+const startApp = () => {
     console.log ('Workshop1 startApp');
-    renderList ();
 
+    const taskList = loadList();
+
+    renderList (taskList);
+
+    const updateList = () => {
+        saveList(tasksList);
+        renderList(tasksList);
+    };
+
+    const onSubmit = (newTask) => {
+        tasksList.push({
+            name: newTask,
+            completed: false,
+        });
+        updateList();
+    };
+
+    formListener(onSubmit);
+
+    listClickListener ((index) => {
+        taskList.splice (index, 1);
+        updateList ();
+    });
+
+    formChangeListener((text) => {
+        const filteredTasks = tasksList.filter (byName (text));
+        renderList(filteredTask);
+    });
 };
 
-document.addEventListener (type: 'DOMContentLoader', startApp);
+document.addEventListener ('DOMContentLoader', startApp);

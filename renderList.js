@@ -20,14 +20,22 @@ export const renderList = (tasksList) => {
 
 };*/
 
-const listElement = document.querySelector ('#List')
+const listElement = document.querySelector ('#list')
 
 export const renderList = (tasksList) => {
-    console.log ('render.tasksList', tasksList);
+    listElement.innerHTML = '';
 
-    list.array.forEach((task) => {
-        const taskElement = document.createElement (tagName: 'li');
-        taskElement.innerHTML = `<p>${task}</p>`;
-        listElement.append (taskElement)
+    taskList.forEach((task) => {
+        const taskElement = document.createElement ('li');
+        taskElement.innerHTML = `
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="checkbox" type="checkbox">
+                    ${task.name}
+                    <i class="input-helper"></i>
+                </label>
+            </div>
+            <a class="remove mdi mdi-close-circle-outline" data-index="${index}"></a>`;
+        listElement.append (taskElement);
     });
 };
