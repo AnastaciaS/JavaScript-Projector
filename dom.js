@@ -1,7 +1,9 @@
-function addThemAll(...args) {
-    return args.reduce((acc, curr) => acc + curr, 0);
-  }
-  
-  console.log(addThemAll(2,4));
-  console.log(addThemAll(1,2,3,4));
-  console.log(addThemAll(5,5,10));
+'use strict';
+
+let headerSelector = document.querySelector('#headerTwo')
+
+let firstSectionHeader = document.querySelector('.firstSection h2')
+
+let liFiveSelector = document.querySelector('li.text:nth-of-type(5)')
+
+let hatredLevelCounter = document.querySelectorAll('.hatredLevelCounter')
