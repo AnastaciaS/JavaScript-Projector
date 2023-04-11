@@ -71,11 +71,11 @@ function formatDate(date) {
 
 // get the start date and end date elements
 
-const calculateButton = document.getElementById('data-calculate');
+const calculateBtn = document.getElementById('data-calculate');
 const resultElement = document.querySelector('.results-time-range .result-number');
 const countInFormatElement = document.getElementById('countInFormat');
 
-calculateButton.addEventListener('click', () => {
+calculateBtn.addEventListener('click', () => {
     const startDate = new Date(startDateElement.value);
     const endDate = new Date(endDateElement.value);
     const timeDiff = Math.abs(endDate - startDate);
@@ -83,6 +83,7 @@ calculateButton.addEventListener('click', () => {
     // calculate the number of days/hours/minutes/seconds based on the selected count in option
     const countInElement = document.querySelector('input[name="count-in"]:checked');
     let countIn;
+    
     if (countInElement.id === 'days') {
         countIn = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
         countInFormatElement.textContent = 'days';
@@ -100,6 +101,7 @@ calculateButton.addEventListener('click', () => {
     // calculate the number of working days/weekends based on the selected type of days option
     const typeOfDaysElement = document.querySelector('input[name=type-of-days"]:checked');
     let totalDays;
+
     if (typeOfDaysElement.id === 'all') {
         totalDays = countIn;
     } else if (typeOfDaysElement.id === 'workDays') {
@@ -107,6 +109,7 @@ calculateButton.addEventListener('click', () => {
         let workDays = 0;
         while (startDateCopy <= endDate) {
             const dayOfWeek = startDateCopy.getDay();
+
             if (dayOfWeek !== 0 && dayOfWeek !== 6) {
                 workDays++;
             }
@@ -118,6 +121,7 @@ calculateButton.addEventListener('click', () => {
         let weekends = 0;
         while (startDateCopy <= endDate) {
             const dayOfWeek = startDateCopy.getDay();
+
             if (dayOfWeek === 0 || dayOfWeek === 6) {
                 weekends++;
             }
@@ -137,9 +141,6 @@ document.getElementById("data-calculate").addEventListener("click", function () 
 });
 
 
-
-
-const calculateBtn = document.getElementById('data-calculate');
 const startDateText = document.getElementById('resultStartDate');
 const endDateText = document.getElementById('resultEndDate');
 const startDateInput = document.getElementById('startDate');
@@ -148,6 +149,7 @@ const endDateInput = document.getElementById('endDate');
 calculateBtn.addEventListener('click', () => {
     const startDateValue = startDateInput.value;
     const endDateValue = endDateInput.value;
+
     if (startDateValue && endDateValue) {
         startDateText.textContent = startDateValue;
         endDateText.textContent = endDateValue;
@@ -165,6 +167,7 @@ workDaysRadio.addEventListener("click", updateTypeDaysResult);
 weekendsRadio.addEventListener("click", updateTypeDaysResult);
 
 function updateTypeDaysResult() {
+
     if (allRadio.checked) {
         typeDaysResult.textContent = "(All Days)";
     } else if (workDaysRadio.checked) {
@@ -175,12 +178,13 @@ function updateTypeDaysResult() {
 }
 
 
-/* Recalculate Button -> active
-const recalculateButton = document.getElementById('dataRecalculate');
+/* Recalculate Btn -> active
+const recalculateBtn = document.getElementById('dataRecalculate');
 const modalElement = document.getElementById('modal');
 const overlayElement = document.getElementById('overlay');
 
 function showOverlayAndModal(modal) {
+    
   if (modal == null) return
   modal.classList.remove('active')
   overlay.classList.remove('active')
@@ -189,7 +193,7 @@ function showOverlayAndModal(modal) {
 
 
 /* Whis doesn't work
-const recalculateButton = document.getElementById('dataRecalculate');
+const recalculateBtn = document.getElementById('dataRecalculate');
 const modalElement = document.getElementById('modal');
 const overlayElement = document.getElementById('overlay');
 
@@ -198,6 +202,6 @@ function showOverlayAndModal() {
   overlayElement.classList.add('active');
 }
 
-recalculateButton.addEventListener('click', () => {
+recalculateBtn.addEventListener('click', () => {
   showOverlayAndModal();
 });*/
