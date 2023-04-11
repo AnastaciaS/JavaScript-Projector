@@ -3,11 +3,11 @@
 const startDateElement = document.getElementById('startDate')
 const endDateElement = document.getElementById('endDate')
 
-startDateElement.addEventListener("change", (event) => {
+startDateElement.addEventListener('change', (event) => {
     const value = event.target.value;
 
     if (value) {
-        endDateElement.removeAttribute("disabled");
+        endDateElement.removeAttribute('disabled');
     }
 });
 
@@ -71,11 +71,11 @@ function formatDate(date) {
 
 // get the start date and end date elements
 
-const calculateButton = document.getElementById("data-calculate");
-const resultElement = document.querySelector(".results-time-range .result-number");
-const countInFormatElement = document.getElementById("countInFormat");
+const calculateButton = document.getElementById('data-calculate');
+const resultElement = document.querySelector('.results-time-range .result-number');
+const countInFormatElement = document.getElementById('countInFormat');
 
-calculateButton.addEventListener("click", () => {
+calculateButton.addEventListener('click', () => {
     const startDate = new Date(startDateElement.value);
     const endDate = new Date(endDateElement.value);
     const timeDiff = Math.abs(endDate - startDate);
@@ -84,27 +84,27 @@ calculateButton.addEventListener("click", () => {
     const countInElement = document.querySelector('input[name="count-in"]:checked');
     let countIn;
 
-    if (countInElement.id === "days") {
+    if (countInElement.id === 'days') {
         countIn = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-        countInFormatElement.textContent = "days";
-    } else if (countInElement.id === "hours") {
+        countInFormatElement.textContent = 'days';
+    } else if (countInElement.id === 'hours') {
         countIn = Math.ceil(timeDiff / (1000 * 60 * 60));
-        countInFormatElement.textContent = "hours";
-    } else if (countInElement.id === "minutes") {
+        countInFormatElement.textContent = 'hours';
+    } else if (countInElement.id === 'minutes') {
         countIn = Math.ceil(timeDiff / (1000 * 60));
-        countInFormatElement.textContent = "minutes";
-    } else if (countInElement.id === "seconds") {
+        countInFormatElement.textContent = 'minutes';
+    } else if (countInElement.id === 'seconds') {
         countIn = Math.ceil(timeDiff / 1000);
-        countInFormatElement.textContent = "seconds";
+        countInFormatElement.textContent = 'seconds';
     }
 
     // calculate the number of working days/weekends based on the selected type of days option
     const typeOfDaysElement = document.querySelector('input[name="type-of-days"]:checked');
     let totalDays;
 
-    if (typeOfDaysElement.id === "all") {
+    if (typeOfDaysElement.id === 'all') {
         totalDays = countIn;
-    } else if (typeOfDaysElement.id === "workDays") {
+    } else if (typeOfDaysElement.id === 'workDays') {
         const startDateCopy = new Date(startDate);
         let workDays = 0;
         while (startDateCopy <= endDate) {
@@ -115,7 +115,7 @@ calculateButton.addEventListener("click", () => {
             startDateCopy.setDate(startDateCopy.getDate() + 1);
         }
         totalDays = workDays;
-    } else if (typeOfDaysElement.id === "weekends") {
+    } else if (typeOfDaysElement.id === 'weekends') {
         const startDateCopy = new Date(startDate);
         let weekends = 0;
         while (startDateCopy <= endDate) {
@@ -132,10 +132,10 @@ calculateButton.addEventListener("click", () => {
     resultElement.textContent = totalDays;
 });
 
-document.getElementById("data-calculate").addEventListener("click", function () {
-    document.getElementById("modal").classList.remove("popup__container");
-    document.getElementById("overlay").removeAttribute("id");
-    document.getElementById("modal").innerHTML = "";
+document.getElementById('data-calculate').addEventListener('click', function () {
+    document.getElementById('modal').classList.remove('popup__container');
+    document.getElementById('overlay').removeAttribute('id');
+    document.getElementById('modal').innerHTML = '';
 });
 
 
@@ -158,23 +158,23 @@ calculateBtn.addEventListener('click', () => {
 });
 
 
-const allRadio = document.getElementById("all");
-const workDaysRadio = document.getElementById("workDays");
-const weekendsRadio = document.getElementById("weekends");
-const typeDaysResult = document.getElementById("typeDaysResult");
+const allRadio = document.getElementById('all');
+const workDaysRadio = document.getElementById('workDays');
+const weekendsRadio = document.getElementById('weekends');
+const typeDaysResult = document.getElementById('typeDaysResult');
 
-allRadio.addEventListener("click", updateTypeDaysResult);
-workDaysRadio.addEventListener("click", updateTypeDaysResult);
-weekendsRadio.addEventListener("click", updateTypeDaysResult);
+allRadio.addEventListener('click', updateTypeDaysResult);
+workDaysRadio.addEventListener('click', updateTypeDaysResult);
+weekendsRadio.addEventListener('click', updateTypeDaysResult);
 
 function updateTypeDaysResult() {
     
     if (allRadio.checked) {
-        typeDaysResult.textContent = "(All Days)";
+        typeDaysResult.textContent = '(All Days)';
     } else if (workDaysRadio.checked) {
-        typeDaysResult.textContent = "(Work Days Only)";
+        typeDaysResult.textContent = '(Work Days Only)';
     } else if (weekendsRadio.checked) {
-        typeDaysResult.textContent = "(Weekends Only)";
+        typeDaysResult.textContent = '(Weekends Only)';
     }
 }
 
