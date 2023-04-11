@@ -1,97 +1,104 @@
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>time-calculator-app</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <section class="page__results" id="page">
-      <div class="page__results-layout">
-        <h1 class="page__results-title">Time Calculations Result</h1>
-        <div class="page__results-textfield">
-          <p>Period of time:</p>
-          <div class="results-time-range"><h2 id="resultStartDate">date</h2>
-            <span class="text">-</span>
-            <h2 id="resultEndDate">date</h2></div>
-          <div class="text" id="typeDaysResult">(All Days)</div>
-          <div class="results-time-range"><div class="result-number">0</div><span class="text" id="countInFormat">days</span></div>
-        </div>
-        <button class="large-btn-recalculate" id="dataRecalculate">Recalculate</button>
-      <div>
+        <div class="page__results-layout">
+            <h1 class="page__results-title">Time Calculations Result</h1>
+            <div class="page__results-textfield">
+                <p>Period of time:</p>
+                <div class="results-time-range">
+                    <h2 id="resultStartDate">date</h2>
+                    <span class="text">-</span>
+                    <h2 id="resultEndDate">date</h2>
+                </div>
+                <div class="text" id="typeDaysResult">(All Days)</div>
+                <div class="results-time-range">
+                    <div class="result-number">0</div><span class="text" id="countInFormat">days</span>
+                </div>
+            </div>
+            <button class="large-btn-recalculate" id="dataRecalculate">Recalculate</button>
+            <div>
     </section>
     <div class="popup__container" id="modal">
-       <h3 class="popup__title">Time calculator</h3>
-       <p class="popup__description">Choose date range, time options and see the results</p>
-       <form class="popup__form">
-        <div class="date-inputs">
-         <div class="date-input-field">
-          <label class="input-name" for="startDate">Start Date</label>
-          <input class="input-date" id="startDate" type="date" onChange="updateEndDateMin()">
-        </div>
-         <div class="date-input-field">
-          <label class="input-name" for="endDate">End Date</label>
-          <input class="input-date" id="endDate" type="date" disabled>
-        </div>
-        </div>
-        <div class="presets">
-          <button class="preset-btn" id="weekBtn">Week</button>
-          <button class="preset-btn" id="monthBtn">Month</button>
-          <button class="preset-btn" id="yearBtn">Year</button>
-        </div>
-        
-        <div class="input-type-container">
-    <label class="input-name" for="startDate">Type of Days</label>
-    <div class="radio-flex">
-      <input type="radio" id="all" name="type-of-days">
-      <label class="entry" for="daysInput1">
-        <div class="circle"></div>
-        <div class="entry-label" id="allText">All</div>
-      </label>
-      <input type="radio" id="workDays" name="type-of-days">
-      <label class="entry" for="daysInput2">
-        <div class="circle"></div>
-        <div class="entry-label" id="workDaysText">Work Days</div>
-      </label>
-      <input type="radio" id="weekends" name="type-of-days">
-      <label class="entry" for="daysInput3">
-        <div class="circle"></div>
-        <div class="entry-label" id="weekendsText">Weekends</div>
-      </label>
+        <h3 class="popup__title">Time calculator</h3>
+        <p class="popup__description">Choose date range, time options and see the results</p>
+        <form class="popup__form">
+            <div class="date-inputs">
+                <div class="date-input-field">
+                    <label class="input-name" for="startDate">Start Date</label>
+                    <input class="input-date" id="startDate" type="date" onChange="updateEndDateMin()">
+                </div>
+                <div class="date-input-field">
+                    <label class="input-name" for="endDate">End Date</label>
+                    <input class="input-date" id="endDate" type="date" disabled>
+                </div>
+            </div>
+            <div class="presets">
+                <button class="preset-btn" id="weekBtn">Week</button>
+                <button class="preset-btn" id="monthBtn">Month</button>
+                <button class="preset-btn" id="yearBtn">Year</button>
+            </div>
+
+            <div class="input-type-container">
+                <label class="input-name" for="startDate">Type of Days</label>
+                <div class="radio-flex">
+                    <input type="radio" id="all" name="type-of-days">
+                    <label class="entry" for="daysInput1">
+                        <div class="circle"></div>
+                        <div class="entry-label" id="allText">All</div>
+                    </label>
+                    <input type="radio" id="workDays" name="type-of-days">
+                    <label class="entry" for="daysInput2">
+                        <div class="circle"></div>
+                        <div class="entry-label" id="workDaysText">Work Days</div>
+                    </label>
+                    <input type="radio" id="weekends" name="type-of-days">
+                    <label class="entry" for="daysInput3">
+                        <div class="circle"></div>
+                        <div class="entry-label" id="weekendsText">Weekends</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-type-container">
+                <label class="input-name" for="startDate">Count in</label>
+                <div class="radio-flex">
+                    <input type="radio" id="days" name="count-in">
+                    <label class="entry" for="input1">
+                        <div class="circle"></div>
+                        <div class="entry-label" id="daysText">Days</div>
+                    </label>
+                    <input type="radio" id="hours" name="count-in">
+                    <label class="entry" for="input2">
+                        <div class="circle"></div>
+                        <div class="entry-label" id="hoursText">Hours</div>
+                    </label>
+                    <input type="radio" id="minutes" name="count-in">
+                    <label class="entry" for="input3">
+                        <div class="circle"></div>
+                        <div class="entry-label" id="minutesText">Minutes</div>
+                    </label>
+                    <input type="radio" id="seconds" name="count-in">
+                    <label class="entry" for="input4">
+                        <div class="circle"></div>
+                        <div class="entry-label" id="secondsText">Seconds</div>
+                    </label>
+                </div>
+            </div>
+
+        </form>
+        <button class="large-btn" id="data-calculate">Calculate</button>
     </div>
-  </div>
-  
-        <div class="input-type-container">
-    <label class="input-name" for="startDate">Count in</label>
-    <div class="radio-flex">
-      <input type="radio" id="days" name="count-in">
-      <label class="entry" for="input1">
-        <div class="circle"></div>
-        <div class="entry-label" id="daysText">Days</div>
-      </label>
-      <input type="radio" id="hours" name="count-in">
-      <label class="entry" for="input2">
-        <div class="circle"></div>
-        <div class="entry-label" id="hoursText">Hours</div>
-      </label>
-      <input type="radio" id="minutes" name="count-in">
-      <label class="entry" for="input3">
-        <div class="circle"></div>
-        <div class="entry-label" id="minutesText">Minutes</div>
-      </label>
-      <input type="radio"  id="seconds" name="count-in">
-      <label class="entry" for="input4">
-        <div class="circle" ></div>
-        <div class="entry-label" id="secondsText">Seconds</div>
-      </label>
-    </div>
-  </div>
-    
-       </form>
-       <button class="large-btn" id="data-calculate">Calculate</button>
-     </div>
-    <div id="overlay"></div>  
-    <script  src="./index.js" type="module"></script>
-  </body>
-  </html>>
+    <div id="overlay"></div>
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>>
