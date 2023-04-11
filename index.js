@@ -97,7 +97,7 @@ calculateButton.addEventListener('click', () => {
         countIn = Math.ceil(timeDiff / 1000);
         countInFormatElement.textContent = 'seconds';
     }
-
+    
     // calculate the number of working days/weekends based on the selected type of days option
     const typeOfDaysElement = document.querySelector('input[name="type-of-days"]:checked');
     let totalDays;
