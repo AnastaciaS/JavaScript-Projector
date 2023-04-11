@@ -12,18 +12,10 @@ startDateElement.addEventListener("change", (event) => {
 });
 
 function updateEndDateMin() {
-  // Get the value of the startDate input field
-  const startDateValue = document.getElementById('startDate').value;
-  
-  // Set the min attribute of the endDate input field to startDateValue
+const startDateValue = document.getElementById('startDate').value;
   document.getElementById('endDate').min = startDateValue;
-  
-  // Enable the endDate input field
   document.getElementById('endDate').disabled = false;
 }
-
-
-
 
 const weekBtn = document.getElementById('weekBtn');
 const monthBtn = document.getElementById('monthBtn');
@@ -79,26 +71,17 @@ const yearBtn = document.getElementById('yearBtn');
 
 // get the start date and end date elements
 
-// get the calculate button element
 const calculateButton = document.getElementById("data-calculate");
-
-// get the result element
 const resultElement = document.querySelector(".results-time-range .result-number");
-
-// get the count in format element
 const countInFormatElement = document.getElementById("countInFormat");
 
-// add a click event listener to the calculate button
 calculateButton.addEventListener("click", () => {
-  // get the start date and end date values
-  const startDate = new Date(startDateElement.value);
-  const endDate = new Date(endDateElement.value);
-
-  // calculate the time difference in milliseconds
-  const timeDiff = Math.abs(endDate - startDate);
+const startDate = new Date(startDateElement.value);
+const endDate = new Date(endDateElement.value);
+const timeDiff = Math.abs(endDate - startDate);
 
   // calculate the number of days/hours/minutes/seconds based on the selected count in option
-  const countInElement = document.querySelector('input[name="count-in"]:checked');
+const countInElement = document.querySelector('input[name="count-in"]:checked');
   let countIn;
   if (countInElement.id === "days") {
     countIn = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
@@ -115,7 +98,7 @@ calculateButton.addEventListener("click", () => {
   }
 
   // calculate the number of working days/weekends based on the selected type of days option
-  const typeOfDaysElement = document.querySelector('input[name="type-of-days"]:checked');
+const typeOfDaysElement = document.querySelector('input[name="type-of-days"]:checked');
   let totalDays;
   if (typeOfDaysElement.id === "all") {
     totalDays = countIn;
@@ -147,12 +130,10 @@ calculateButton.addEventListener("click", () => {
   resultElement.textContent = totalDays;
 });
 
-
-
-document.getElementById("data-calculate").addEventListener("click", function() {
-  document.getElementById("modal").classList.remove("popup__container");
-  document.getElementById("overlay").removeAttribute("id");
-  document.getElementById("modal").innerHTML = ""; // remove all items inside popup
+    document.getElementById("data-calculate").addEventListener("click", function() {
+    document.getElementById("modal").classList.remove("popup__container");
+    document.getElementById("overlay").removeAttribute("id");
+    document.getElementById("modal").innerHTML = "";
 });
 
 
@@ -174,19 +155,15 @@ calculateBtn.addEventListener('click', () => {
 });
 
 
-
-// Get the radio buttons and the result <div> element
 const allRadio = document.getElementById("all");
 const workDaysRadio = document.getElementById("workDays");
 const weekendsRadio = document.getElementById("weekends");
 const typeDaysResult = document.getElementById("typeDaysResult");
 
-// Add event listeners to the radio buttons
 allRadio.addEventListener("click", updateTypeDaysResult);
 workDaysRadio.addEventListener("click", updateTypeDaysResult);
 weekendsRadio.addEventListener("click", updateTypeDaysResult);
 
-// Define the event listener function
 function updateTypeDaysResult() {
   if (allRadio.checked) {
     typeDaysResult.textContent = "(All Days)";
@@ -196,9 +173,6 @@ function updateTypeDaysResult() {
     typeDaysResult.textContent = "(Weekends Only)";
   }
 }
-
-
-
 
 
 /* Recalculate Button -> active
