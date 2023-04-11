@@ -3,11 +3,11 @@
 const startDateElement = document.getElementById('startDate')
 const endDateElement = document.getElementById('endDate')
 
-startDateElement.addEventListener("change", (event) => {
+startDateElement.addEventListener('change', (event) => {
     const value = event.target.value;
 
     if (value) {
-        endDateElement.removeAttribute("disabled");
+        endDateElement.removeAttribute('disabled');
     }
 });
 
