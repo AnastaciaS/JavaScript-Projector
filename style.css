@@ -107,7 +107,7 @@ p, .text {
   color: #545556;
 }
 
-.large-btn, .large-btn-recalculate {
+.large-btn {
   background: #306FBC;
   padding: 0;
   border: none;
