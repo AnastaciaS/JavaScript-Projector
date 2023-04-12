@@ -54,7 +54,7 @@ p, .text {
   padding-bottom: 30px;
 }
 
-.input-name {
+.input-name, .label-name {
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;

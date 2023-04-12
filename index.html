@@ -24,7 +24,6 @@
                 </div>
             </div>
             <button class="large-btn" id="dataRecalculate">Recalculate</button>
-            <div>
     </section>
     <div class="popup__container" id="modal">
         <h3 class="popup__title">Time calculator</h3>
@@ -32,11 +31,11 @@
         <form class="popup__form">
             <div class="date-inputs">
                 <div class="date-input-field">
-                    <label class="input-name" for="startDate">Start Date</label>
+                    <label class="label-name" for="startDate">Start Date</label>
                     <input class="input-date" id="startDate" type="date" onChange="updateEndDateMin()">
                 </div>
                 <div class="date-input-field">
-                    <label class="input-name" for="endDate">End Date</label>
+                    <label class="label-name" for="endDate">End Date</label>
                     <input class="input-date" id="endDate" type="date" disabled>
                 </div>
             </div>
@@ -47,24 +46,24 @@
             </div>
 
             <div class="input-type-container">
-                <label class="input-name" for="startDate">Type of Days</label>
+                <label class="label-name" for="startDate">Type of Days</label>
                 <div class="radio-flex">
                     <input type="radio" id="all" name="type-of-days" for="daysInput1">
                     <label class="entry-label" for="all" id="allText">All</label>
                     <input type="radio" id="workDays" name="type-of-days" for="daysInput2">
                     <label class="entry-label" for="workDays" id="workDaysText">Work Days</label>
                     <input type="radio" id="weekends" name="type-of-days" for="daysInput3">
-                    <label class="entry-label" for="daysInput3" id="weekendsText">Weekends</label>
+                    <label class="entry-label" for="weekends" id="weekendsText">Weekends</label>
                 </div>
             </div>
 
             <div class="input-type-container">
-                <label class="input-name" for="startDate">Count in</label>
+                <label class="label-name" for="startDate">Count in</label>
                 <div class="radio-flex">
                     <input type="radio" id="days" name="count-in">
                     <label class="entry-label" for="days">Days</label>
                     <input type="radio" id="hours" name="count-in">
-                    <label class="entry-label" for="minutes">Hours</label>
+                    <label class="entry-label" for="hours">Hours</label>
                     <input type="radio" id="minutes" name="count-in">
                     <label class="entry-label" for="minutes">Minutes</label>
                     <input type="radio" id="seconds" name="count-in">
@@ -78,3 +77,4 @@
     <div id="overlay"></div>
     <script src="./index.js" type="module"></script>
 </body>
+</html>
