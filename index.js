@@ -132,14 +132,6 @@ calculateButton.addEventListener('click', () => {
     resultElement.textContent = totalDays;
 });
 
-document.getElementById('data-calculate').addEventListener('click', function () {
-    document.getElementById('modal').classList.remove('popup__container');
-    document.getElementById('overlay').removeAttribute('id');
-    document.getElementById('modal').innerHTML = '';
-});
-
-
-
 
 const calculateBtn = document.getElementById('data-calculate');
 const startDateText = document.getElementById('resultStartDate');
@@ -183,30 +175,41 @@ function display () {
     resultElement.innerHTML = localStorage.setItem ('value')
   }
 
+const recalculateBtn = document.querySelector('#dataRecalculate');
+const modal = document.querySelector('#modal');
+const overlay = document.querySelector('#overlay');
 
-/* Recalculate Button -> active
-const recalculateButton = document.getElementById('dataRecalculate');
-const modalElement = document.getElementById('modal');
-const overlayElement = document.getElementById('overlay');
+calculateBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+  overlay.style.display = 'none';
+});
 
-function showOverlayAndModal(modal) {
-  if (modal == null) return
-  modal.classList.remove('active')
-  overlay.classList.remove('active')
-} */
-
+recalculateBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
+  overlay.style.display = 'block';
+});
 
 
-/* Whis doesn't work
-const recalculateButton = document.getElementById('dataRecalculate');
-const modalElement = document.getElementById('modal');
-const overlayElement = document.getElementById('overlay');
 
-function showOverlayAndModal() {
-  modalElement.classList.add('active');
-  overlayElement.classList.add('active');
-}
+//Disable button
 
-recalculateButton.addEventListener('click', () => {
-  showOverlayAndModal();
-});*/
+const typeOfDaysRadioButtons = document.getElementsByName("type-of-days");
+
+// Disable the Calculate button initially
+calculateButton.disabled = true;
+
+// Add an event listener to the form that checks whether the required fields have been filled out
+const form = document.querySelector(".popup__form");
+form.addEventListener("input", function() {
+  // Check if the Start Date and End Date fields have values
+  const startDate = startDateInput.value;
+  const endDate = endDateInput.value;
+  const typeOfDaysSelected = [...typeOfDaysRadioButtons].some(button => button.checked);
+
+  // Enable the Calculate button if the required fields have values, otherwise disable it
+  if (startDate && endDate && typeOfDaysSelected) {
+    calculateButton.disabled = false;
+  } else {
+    calculateButton.disabled = true;
+  }
+});

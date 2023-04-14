@@ -191,3 +191,9 @@ p, .text {
   text-align: center;
 }
 
+#data-calculate:disabled {
+  background-color: #9DB4D0;
+  color: white;
+  cursor: not-allowed;
+}
+
