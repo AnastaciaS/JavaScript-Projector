@@ -178,6 +178,11 @@ function updateTypeDaysResult() {
     }
 }
 
+function display () {
+    localStorage.setItem ('value', input.value);
+    resultElement.innerHTML = localStorage.setItem ('value')
+  }
+
 
 /* Recalculate Button -> active
 const recalculateButton = document.getElementById('dataRecalculate');
