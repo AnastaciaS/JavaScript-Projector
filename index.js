@@ -1,74 +1,98 @@
-`use strict`;
+'use strict';
 
 class Food {
-    constructor(taste, portion, flavor) {
-        this.flavor = flavor;
-        this.taste = taste;
-        this.portion = portion;
-    }
-
-    cook() {
-        console.log('Cooking successful ' + this.portion);
-    }
-
-    setSize(portion) {
-
-        if (['small', 'middle', 'large'].includes(portion)) {
-            this.portion = portion;
-        } else {
-            throw new Error('Portion is too small');
-        }
-    }
+  constructor(flavor, taste, portion) {
+    this.flavor = flavor;
+    this.taste = taste;
+    this.portion = portion;
+    this._privateProperty = "This is a private property";
+  }
+  
+  bake() {
+    console.log("Baked food" + this.flavor);
+  }
+  
+  fry() {
+    console.log("Fried food" + this.taste);
+  }
+  
+  grill() {
+    console.log("Grilled food" + this.taste);
+  }
+  
+  roast() {
+    console.log("Roasted food" + this.flavor);
+  }
+  
+  freeze() {
+    console.log("Frozen food" + this.portion);
+  }
+  
+  mix() {
+    console.log("Mixed food" + this.flavor);
+  }
+  
+  cut() {
+    console.log("Cut food");
+  }
 }
 
-class Ratatouille extends Food {
-    constructor(portion, flavor, forLunch) {
-        super(portion, flavor);
-        this.forLunch = forLunch;
-    }
-
-    cook() {
-        
-        if (this.forLunch) {
-            console.log(this.portion + 'Ratatouille is ready');
-        } else {
-            console.log(this.taste + 'Ratatouille is not ready yet');
-        }
-    }
+class Vegetable extends Food {
+  constructor(flavor, taste, portion, color) {
+    super(flavor, taste, portion);
+    this.color = color;
+  }
+  
+  boil() {
+    console.log("Boiled vegetable");
+  }
 }
 
-class Cheesecake extends Food {
-    constructor(taste, portion) {
-        super(taste, portion);
-    }
-
-    bake() {
-        console.log("Bake for 15 min");
-    }
+class Fish extends Food {
+  constructor(flavor, taste, portion, type) {
+    super(flavor, taste, portion);
+    this.type = type;
+  }
+  
+  steam() {
+    console.log("Steamed fish");
+  }
 }
 
-const a = new Ratatouille('portion', 'flavor', true);
-const b = new Cheesecake('taste', 'portion', false);
-console.log(a, b, a === b);
+class Dairy extends Food {
+  constructor(flavor, taste, portion, origin) {
+    super(flavor, taste, portion);
+    this.origin = origin;
+  }
+  
+  curdle() {
+    console.log("Curdled dairy");
+  }
+}
 
-const portion = document.getElementById('portion') ?? 'portion';
+class Eggs extends Food {
+  constructor(flavor, taste, portion, size) {
+    super(flavor, taste, portion);
+    this.size = size;
+  }
+  
+  scramble() {
+    console.log("Scrambled eggs");
+  }
+}
 
-b.setSize(portion);
+class Nuts extends Food {
+  constructor(flavor, taste, portion, source) {
+    super(flavor, taste, portion);
+    this.source = source;
+  }
+  
+  raw() {
+    console.log("Raw nuts");
+  }
+}
 
-console.log(a.portion, b.portion, a === b, a.portion === b.portion);
-
-a.cook();
-a.setSize();
-b.bake();
-
-console.log('2' + '2');
-
-const margeHeight = (obj, height) => {
-    obj.height = height;
-    return obj;
+Nuts.prototype.cook = function() {
+  console.log("Roasted nuts");
 };
 
-const aa = margeHeight(a, 10);
-const bb = margeHeight(b, 20);
-
-console.log(aa, bb);
