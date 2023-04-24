@@ -92,3 +92,11 @@ class Nuts extends Food {
     }
 }
 
+const carrot = new Vegetable("sweet", "crunchy", "medium", ["vitamin A", "fiber"]);
+
+const salmon = new Fish("rich", "buttery", "large", "Atlantic");
+salmon.toGrill();
+
+
+const milk = new Dairy("mild", "creamy", "large", "cow");
+milk.toCurdle();
