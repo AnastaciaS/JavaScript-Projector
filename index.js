@@ -5,46 +5,46 @@ class Food {
         this.flavor = flavor;
         this.taste = taste;
         this.portion = portion;
-        this._privateProperty = "This is a private property";
+        this.#privateProperty = "This is a private property";
     }
 
-    bake() {
-        console.log("Baked food" + this.flavor);
+    toBake() {
+        console.log("To bake food" + this.flavor);
     }
 
-    fry() {
-        console.log("Fried food" + this.taste);
+    toFry() {
+        console.log("To fry food" + this.taste);
     }
 
-    grill() {
-        console.log("Grilled food" + this.taste);
+    toGrill() {
+        console.log("To grill food" + this.taste);
     }
 
-    roast() {
-        console.log("Roasted food" + this.flavor);
+    toRoast() {
+        console.log("To roast food" + this.flavor);
     }
 
-    freeze() {
-        console.log("Frozen food" + this.portion);
+    toFreeze() {
+        console.log("To freeze food" + this.portion);
     }
 
-    mix() {
-        console.log("Mixed food" + this.flavor);
+    toMix() {
+        console.log("To mix food" + this.flavor);
     }
 
-    cut() {
-        console.log("Cut food");
+    toCut() {
+        console.log("To cut food");
     }
 }
 
 class Vegetable extends Food {
-    constructor(flavor, taste, portion, color) {
+    constructor(flavor, taste, portion, nutrients) {
         super(flavor, taste, portion);
-        this.color = color;
+        this.nutrients = nutrients;
     }
 
-    boil() {
-        console.log("Boiled vegetable");
+    toChop() {
+        console.log("To chop vegetable");
     }
 }
 
@@ -54,8 +54,8 @@ class Fish extends Food {
         this.type = type;
     }
 
-    steam() {
-        console.log("Steamed fish");
+    toFish() {
+        console.log("To fish");
     }
 }
 
@@ -65,19 +65,19 @@ class Dairy extends Food {
         this.origin = origin;
     }
 
-    curdle() {
-        console.log("Curdled dairy");
+    toCurdle() {
+        console.log("To curdle dairy");
     }
 }
 
 class Eggs extends Food {
     constructor(flavor, taste, portion, size) {
         super(flavor, taste, portion);
-        this.size = size;
+        this.proteins = proteins;
     }
 
-    scramble() {
-        console.log("Scrambled eggs");
+    toBoil() {
+        console.log("To boil eggs");
     }
 }
 
@@ -91,8 +91,4 @@ class Nuts extends Food {
         console.log("Raw nuts");
     }
 }
-
-Nuts.prototype.cook = function () {
-    console.log("Roasted nuts");
-};
 
