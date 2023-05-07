@@ -1,46 +1,46 @@
 'use strict';
 
-function Food(flavor, taste, portion) {
-    this.flavor = flavor;
-    this.taste = taste;
+function Food (quantity, method, portion) {
+    this.quantity = quantity;
+    this.method = method;
     this.portion = portion;
-    this.#privateProperty = "This is a private property";
+    this._privateProperty = "This is a private property";
 }
 
 Food.prototype.bake = function () {
-    console.log("Baked food" + this.flavor);
+    console.log ("Baked food");
 };
 
 Food.prototype.fry = function () {
-    console.log("Fried food" + this.taste);
+    console.log ("Fried food");
 };
 
 Food.prototype.grill = function () {
-    console.log("Grilled food" + this.taste);
+    console.log ("Grilled food");
 };
 
 Food.prototype.roast = function () {
-    console.log("Roasted food" + this.flavor);
+    console.log ("Roasted food");
 };
 
 Food.prototype.freeze = function () {
-    console.log("Frozen food" + this.portion);
+    console.log ("Frozen food");
 };
 
 Food.prototype.mix = function () {
-    console.log("Mixed food" + this.flavor);
+    console.log ("Mixed food");
 };
 
 Food.prototype.getPrivateProperty = function () {
-    return this.#privateProperty;
+    return this._privateProperty;
 };
 
-function Vegetable(flavor, taste, portion, color) {
-    Food.call(this, flavor, taste, portion);
+function Vegetable (quantity, portion, color) {
+    Food.call (this, quantity, "boil", portion);
     this.color = color;
 }
 
-Vegetable.prototype = Object.create(Food.prototype);
+Vegetable.prototype = Object.create (Food.prototype);
 
 Vegetable.prototype.getNutritionValue = function (quantity) {
     const portionFactor = this.portion / 100; // Assume portion is in grams
@@ -48,21 +48,22 @@ Vegetable.prototype.getNutritionValue = function (quantity) {
     return portionFactor * colorFactor * quantity;
 };
 
-function Fish(flavor, taste, portion, type) {
-    Food.call(this, flavor, taste, portion);
-    this.type = type;
+function Fish (quantity, weight) {
+    Food.call (this, quantity, "steam", weight);
+    this.type = "fish";
 }
 
 Fish.prototype = Object.create(Food.prototype);
 
 Fish.prototype.steam = function () {
     const cookingTimePerKg = 10; // Assume 10 minutes per kg of fish
-    return cookingTimePerKg * weight;
+    return cookingTimePerKg * this.portion;
 };
 
-function Dairy(flavor, taste, portion, origin) {
-    Food.call(this, flavor, taste, portion);
-    this.origin = origin;
+function Dairy (quantity, method) {
+    Food.call (this, quantity, method, 100);
+    this.origin = "unknown";
+    this.isPasteurized = true;
 }
 
 Dairy.prototype = Object.create(Food.prototype);
@@ -71,24 +72,24 @@ Dairy.prototype.isPasteurized = function () {
     return this.isPasteurized;
 };
 
-function Eggs(flavor, taste, portion, size) {
-    Food.call(this, flavor, taste, portion);
-    this.size = size;
+function Eggs (quantity, size) {
+    Food.call (this, quantity, "scramble", size);
+    this.type = "egg";
 }
 
-Eggs.prototype = Object.create(Food.prototype);
+Eggs.prototype = Object.create (Food.prototype);
 
 Eggs.prototype.getCholesterolLevel = function (quantity) {
     const cholesterolPerEgg = 200; // Assume 200mg of cholesterol per egg
     return cholesterolPerEgg * quantity;
 };
 
-function Nuts(flavor, taste, portion, source) {
-    Food.call(this, flavor, taste, portion);
+function Nuts (quantity, portion, source) {
+    Food.call (this, quantity, "roast", portion);
     this.source = source;
 }
 
-Nuts.prototype = Object.create(Food.prototype);
+Nuts.prototype = Object.create (Food.prototype);
 
 Nuts.prototype.getCaloriesPerOunce = function () {
     const caloriesPerGram = 6; // Assume 6 calories per gram of nuts
