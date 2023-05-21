@@ -1,48 +1,33 @@
-import { getRandomEmoji, removeEmoji } from './emojiModule.js';
+import { getRandomEmoji, displayEmojis, removeEmojiFromSet } from './emoji.js';
 
-// Get DOM elements
 const arrayInput = document.getElementById('arrayInput');
 const setInput = document.getElementById('setInput');
 const emojiInput = document.getElementById('emojiInput');
 
-// Initialize Array and Set
-let emojiArray = [];
-let emojiSet = new Set();
+const arrayEmojis = [];
+const setEmojis = new Set();
 
-// Display emojis in the inputs
-function displayEmojis() {
-  arrayInput.value = emojiArray.join(' ');
-  setInput.value = Array.from(emojiSet).join(' ');
-}
-
-// Add emoji to Array and Set
+// Function to add emoji to the array and set
 function addEmoji() {
-  const emojiValue = emojiInput.value;
-  emojiArray.push(emojiValue);
-  emojiSet.add(emojiValue);
-  emojiInput.value = '';
-  displayEmojis();
-  generateRandomEmoji();
+  const emoji = emojiInput.value;
+  arrayEmojis.push(emoji);
+  setEmojis.add(emoji);
+  emojiInput.value = getRandomEmoji();
+  displayEmojis(arrayEmojis, arrayInput);
+  displayEmojis([...setEmojis], setInput);
 }
 
-// Remove emoji from Array and Set
-function removeEmojiFromInput() {
-  const emojiToRemove = this.value;
-  emojiArray = removeEmoji(emojiArray, emojiToRemove);
-  emojiSet.delete(emojiToRemove);
-  displayEmojis();
+// Function to remove emoji from the array and set
+function removeEmoji(emoji) {
+  const index = arrayEmojis.indexOf(emoji);
+  if (index > -1) {
+    arrayEmojis.splice(index, 1);
+    setEmojis.delete(emoji);
+    displayEmojis(arrayEmojis, arrayInput);
+    displayEmojis([...setEmojis], setInput);
+  }
 }
 
-// Register remove event for Array input
-arrayInput.addEventListener('click', removeEmojiFromInput);
-
-// Generate random emoji
-function generateRandomEmoji() {
-  const randomEmoji = getRandomEmoji();
-  emojiInput.value = randomEmoji;
-}
-
-// Generate random emoji on page load
-window.addEventListener('DOMContentLoaded', () => {
-  generateRandomEmoji();
-});
+displayEmojis(arrayEmojis, arrayInput);
+displayEmojis([...setEmojis], setInput);
+emojiInput.value = getRandomEmoji();
