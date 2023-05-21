@@ -17,8 +17,8 @@ import { byName } from './filters.js';
 console.log('Workshop1 start');
 
 // Create a new task
-    // by clicking on the button
-    // by pressing enter
+// by clicking on the button
+// by pressing enter
 // Delete a task
 // Search tasks by name
 
@@ -29,7 +29,7 @@ console.log('Workshop1 start');
 
 // Save data to localStorage
 
-/*const startApp = () => {
+const startApp = () => {
     console.log('Workshop1 startApp');
 
     const tasksList = loadList();
@@ -62,39 +62,4 @@ console.log('Workshop1 start');
     });
 };
 
-document.addEventListener('DOMContentLoaded', startApp);*/
-
-const startApp = () => {
-    console.log ('Workshop1 startApp');
-
-    const taskList = loadList();
-
-    renderList (taskList);
-
-    const updateList = () => {
-        saveList(tasksList);
-        renderList(tasksList);
-    };
-
-    const onSubmit = (newTask) => {
-        tasksList.push({
-            name: newTask,
-            completed: false,
-        });
-        updateList();
-    };
-
-    formListener(onSubmit);
-
-    listClickListener ((index) => {
-        taskList.splice (index, 1);
-        updateList ();
-    });
-
-    formChangeListener((text) => {
-        const filteredTasks = tasksList.filter (byName (text));
-        renderList(filteredTask);
-    });
-};
-
-document.addEventListener ('DOMContentLoader', startApp);
+document.addEventListener('DOMContentLoaded', startApp);

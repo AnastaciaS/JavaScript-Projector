@@ -31,7 +31,8 @@ body {
     -ms-box-shadow: none
 }
 
-.pl-3, .px-3 {
+.pl-3,
+.px-3 {
     padding-left: 1rem !important
 }
 
@@ -47,7 +48,8 @@ body {
     border-radius: 0
 }
 
-.pr-3, .px-3 {
+.pr-3,
+.px-3 {
     padding-right: 1rem !important
 }
 
@@ -133,11 +135,27 @@ body {
     background: transparent
 }
 
-.add-items .btn, .add-items .fc button, .fc .add-items button, .add-items .ajax-upload-dragdrop .ajax-file-upload, .ajax-upload-dragdrop .add-items .ajax-file-upload, .add-items .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .add-items .swal2-styled, .add-items .wizard > .actions a, .wizard > .actions .add-items a {
+.add-items .btn,
+.add-items .fc button,
+.fc .add-items button,
+.add-items .ajax-upload-dragdrop .ajax-file-upload,
+.ajax-upload-dragdrop .add-items .ajax-file-upload,
+.add-items .swal2-modal .swal2-buttonswrapper .swal2-styled,
+.swal2-modal .swal2-buttonswrapper .add-items .swal2-styled,
+.add-items .wizard>.actions a,
+.wizard>.actions .add-items a {
     margin-left: .5rem
 }
 
-.rtl .add-items .btn, .rtl .add-items .fc button, .fc .rtl .add-items button, .rtl .add-items .ajax-upload-dragdrop .ajax-file-upload, .ajax-upload-dragdrop .rtl .add-items .ajax-file-upload, .rtl .add-items .swal2-modal .swal2-buttonswrapper .swal2-styled, .swal2-modal .swal2-buttonswrapper .rtl .add-items .swal2-styled, .rtl .add-items .wizard > .actions a, .wizard > .actions .rtl .add-items a {
+.rtl .add-items .btn,
+.rtl .add-items .fc button,
+.fc .rtl .add-items button,
+.rtl .add-items .ajax-upload-dragdrop .ajax-file-upload,
+.ajax-upload-dragdrop .rtl .add-items .ajax-file-upload,
+.rtl .add-items .swal2-modal .swal2-buttonswrapper .swal2-styled,
+.swal2-modal .swal2-buttonswrapper .rtl .add-items .swal2-styled,
+.rtl .add-items .wizard>.actions a,
+.wizard>.actions .rtl .add-items a {
     margin-left: auto;
     margin-right: .5rem
 }
@@ -199,7 +217,13 @@ body {
     margin-bottom: .25rem
 }
 
-.list-wrapper ul li .form-check, .list-wrapper ul li .form-check .form-check-label, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation, .email-wrapper .mail-list-container .mail-list .content .sender-name, .email-wrapper .message-body .attachments-sections ul li .details p.file-name, .settings-panel .chat-list .list .info p {
+.list-wrapper ul li .form-check,
+.list-wrapper ul li .form-check .form-check-label,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation,
+.email-wrapper .mail-list-container .mail-list .content .sender-name,
+.email-wrapper .message-body .attachments-sections ul li .details p.file-name,
+.settings-panel .chat-list .list .info p {
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 100%;
@@ -214,7 +238,13 @@ body {
     padding-left: 0
 }
 
-.list-wrapper ul li .form-check, .list-wrapper ul li .form-check .form-check-label, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation, .email-wrapper .mail-list-container .mail-list .content .sender-name, .email-wrapper .message-body .attachments-sections ul li .details p.file-name, .settings-panel .chat-list .list .info p {
+.list-wrapper ul li .form-check,
+.list-wrapper ul li .form-check .form-check-label,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation,
+.email-wrapper .mail-list-container .mail-list .content .sender-name,
+.email-wrapper .message-body .attachments-sections ul li .details p.file-name,
+.settings-panel .chat-list .list .info p {
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 100%;
@@ -249,19 +279,26 @@ body {
     filter: alpha(opacity=0)
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
     box-sizing: border-box;
     padding: 0
 }
 
-.list-wrapper ul li .form-check, .list-wrapper ul li .form-check .form-check-label, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation, .email-wrapper .mail-list-container .mail-list .content .sender-name, .email-wrapper .message-body .attachments-sections ul li .details p.file-name, .settings-panel .chat-list .list .info p {
+.list-wrapper ul li .form-check,
+.list-wrapper ul li .form-check .form-check-label,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-name,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user .u-designation,
+.email-wrapper .mail-list-container .mail-list .content .sender-name,
+.email-wrapper .message-body .attachments-sections ul li .details p.file-name,
+.settings-panel .chat-list .list .info p {
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 100%;
     white-space: nowrap
 }
 
-.form-check .form-check-label input[type="checkbox"] + .input-helper:before {
+.form-check .form-check-label input[type="checkbox"]+.input-helper:before {
     content: "";
     width: 18px;
     height: 18px;
@@ -278,13 +315,14 @@ input[type="radio"], input[type="checkbox"] {
     transition-duration: 250ms
 }
 
-.form-check .form-check-label input[type="checkbox"] + .input-helper:before, .form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+.form-check .form-check-label input[type="checkbox"]+.input-helper:before,
+.form-check .form-check-label input[type="checkbox"]+.input-helper:after {
     position: absolute;
     top: 0;
     left: 0
 }
 
-.form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+.form-check .form-check-label input[type="checkbox"]+.input-helper:after {
     -webkit-transition: all;
     -moz-transition: all;
     -ms-transition: all;
@@ -306,18 +344,19 @@ input[type="radio"], input[type="checkbox"] {
     color: #ffffff
 }
 
-.form-check .form-check-label input[type="checkbox"] + .input-helper:before, .form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+.form-check .form-check-label input[type="checkbox"]+.input-helper:before,
+.form-check .form-check-label input[type="checkbox"]+.input-helper:after {
     position: absolute;
     top: 0;
     left: 0
 }
 
-.form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
+.form-check .form-check-label input[type="checkbox"]:checked+.input-helper:before {
     background: #405189;
     border-width: 0
 }
 
-.form-check .form-check-label input[type="checkbox"] + .input-helper:before {
+.form-check .form-check-label input[type="checkbox"]+.input-helper:before {
     content: "";
     width: 18px;
     height: 18px;
@@ -334,7 +373,7 @@ input[type="radio"], input[type="checkbox"] {
     transition-duration: 250ms
 }
 
-.form-check .form-check-label input[type="checkbox"] + .input-helper:after {
+.form-check .form-check-label input[type="checkbox"]+.input-helper:after {
     font-family: FontAwesome;
     content: "\f095";
     display: inline-block;
@@ -343,7 +382,8 @@ input[type="radio"], input[type="checkbox"] {
     color: #fff
 }
 
-.text-primary, .list-wrapper .completed .remove {
+.text-primary,
+.list-wrapper .completed .remove {
     color: #405189 !important
 }
 
@@ -357,7 +397,9 @@ input[type="radio"], input[type="checkbox"] {
     text-align: center
 }
 
-.ml-auto, .list-wrapper .remove, .mx-auto {
+.ml-auto,
+.list-wrapper .remove,
+.mx-auto {
     margin-left: auto !important
 }
 
@@ -392,6 +434,20 @@ input[type="radio"], input[type="checkbox"] {
     flex-direction: column-reverse !important
 }
 
-.d-flex, .loader-demo-box, .distribution-chart-legend .distribution-chart, .distribution-chart-legend .distribution-chart .item, .list-wrapper ul li, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a, .email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user, .email-wrapper .mail-list-container .mail-list .details, .email-wrapper .message-body .attachments-sections ul li .thumb, .email-wrapper .message-body .attachments-sections ul li .details .buttons, .lightGallery .image-tile .demo-gallery-poster, .swal2-modal, .navbar .navbar-menu-wrapper .navbar-nav, .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile, .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
+.d-flex,
+.loader-demo-box,
+.distribution-chart-legend .distribution-chart,
+.distribution-chart-legend .distribution-chart .item,
+.list-wrapper ul li,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a,
+.email-wrapper .mail-sidebar .menu-bar .profile-list-item a .user,
+.email-wrapper .mail-list-container .mail-list .details,
+.email-wrapper .message-body .attachments-sections ul li .thumb,
+.email-wrapper .message-body .attachments-sections ul li .details .buttons,
+.lightGallery .image-tile .demo-gallery-poster,
+.swal2-modal,
+.navbar .navbar-menu-wrapper .navbar-nav,
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile,
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown .dropdown-item {
     display: flex !important
 }
