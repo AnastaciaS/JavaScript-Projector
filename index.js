@@ -171,11 +171,6 @@ function updateTypeDaysResult() {
     }
 }
 
-function display() {
-    localStorage.setItem('value', input.value);
-    resultElement.innerHTML = localStorage.setItem('value')
-}
-
 
 
 //Disable button
@@ -203,12 +198,16 @@ form.addEventListener("input", function () {
 
 
 
+
+
 //LocalStorage
 function displayResultsTable() {
     const resultsTableBody = document.getElementById('resultsTableBody');
     resultsTableBody.innerHTML = ''; // Clear the table body before populating with new results
 
     const results = getResultsFromLocalStorage();
+
+    console.log('Results:', results); // Debugging statement
 
     for (let i = results.length - 1; i >= 0; i--) {
         const result = results[i];
@@ -226,7 +225,11 @@ function displayResultsTable() {
 
 function getResultsFromLocalStorage() {
     const resultsJSON = localStorage.getItem('results');
-    return resultsJSON ? JSON.parse(resultsJSON) : [];
+    const results = resultsJSON ? JSON.parse(resultsJSON) : [];
+
+    console.log('Retrieved Results:', results); // Debugging statement
+
+    return results;
 }
 
 function saveResultToLocalStorage(result) {
@@ -237,26 +240,11 @@ function saveResultToLocalStorage(result) {
         results.shift(); // Remove the oldest result if there are more than 10 results
     }
 
+    console.log('Updated Results:', results); // Debugging statement
+
     localStorage.setItem('results', JSON.stringify(results));
 }
 
-calculateButton.addEventListener('click', () => {
-    // ...
-
-    // Save the result and calculation time to localStorage
-
-    const result = {
-        startDate: startDateElement.value,
-        endDate: endDateElement.value,
-        typeOfDays: typeDaysResult.value,
-        result: countInFormat,
-        calculationTime: new Date().toLocaleString()
-    };
-    saveResultToLocalStorage(result);
-
-    // Update the results table
-    displayResultsTable();
-});
 calculateButton.addEventListener('click', () => {
     // ...
 
@@ -266,8 +254,8 @@ calculateButton.addEventListener('click', () => {
     const result = {
         startDate: startDateElement.value,
         endDate: endDateElement.value,
-        typeOfDays: typeDaysResult.value,
-        result: typeDaysResult,
+        typeOfDays: typeOfDaysElement.value,
+        result: resultElement.innerText,
         calculationTime: new Date().toLocaleString()
     };
     saveResultToLocalStorage(result);

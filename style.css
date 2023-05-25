@@ -72,6 +72,7 @@ p,
 .date-input-field {
     padding-top: 10px;
     max-width: 160px;
+    cursor: pointer;
 }
 
 .input-date {
@@ -108,6 +109,7 @@ p,
     font-size: 14px;
     line-height: 120%;
     color: #545556;
+    cursor: pointer;
 }
 
 .large-btn {
@@ -120,6 +122,7 @@ p,
     font-weight: 600;
     font-size: 16px;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .input-type-containers {
@@ -210,3 +213,75 @@ p,
 .page__results tbody tr:nth-child(even) {
     background-color: #F7F7F7;
 }
+
+
+/* Styles for screens larger than 600px */
+@media (min-width: 601px) {
+    .page__full {
+      max-width: 800px;
+    }
+    
+    .presets {
+      gap: 12px;
+    }
+    
+    .input-type-containers {
+      gap: 50px;
+    }
+    
+    .page__results {
+      max-width: 800px;
+      padding-left: 40px;
+    }
+    
+    .page__results-layout {
+      max-width: 500px;
+    }
+  }
+  
+  /* Styles for screens up to 600px */
+  @media (max-width: 600px) {
+    .page__full {
+      padding: 20px;
+    }
+    
+    .popup__container {
+      padding: 20px;
+    }
+    
+    .date-inputs {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .date-input-field {
+      max-width: none;
+    }
+    
+    .presets {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      gap: 10px;
+    }
+    
+    .input-type-containers {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .large-btn {
+      width: 100%;
+    }
+    
+    .page__results {
+      padding-left: 20px;
+      text-align: center;
+    }
+    
+    .page__results-layout {
+      max-width: none;
+    }
+  }
+  
