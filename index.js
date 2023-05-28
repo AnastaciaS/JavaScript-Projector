@@ -1,3 +1,4 @@
+`use strict`;
 
 //board
 let board;
@@ -21,18 +22,20 @@ let bird = {
 
 //pipes
 let pipeArray = [];
-let pipeWidth = 64;
-let pipeHeight = 512;
+let pipeWidth = 80; // Increased pipe width for easier gameplay
+let pipeHeight = 480; // Increased pipe height for easier gameplay
 let pipeX = boardWidth;
 let pipeY = 0;
+let pipeGap = 200; // Increased pipe gap for easier gameplay
 
 let topPipeImg;
 let bottomPipeImg;
 
+
 //physics
 let velocityX = -2; //pipes moving left speed
 let velocityY = 0; //bird jump speed
-let gravity = 0.4;
+let gravity = 0.3;
 
 let gameOver = false;
 let score = 0;
@@ -64,6 +67,7 @@ window.onload = function () {
     setInterval(placePipes, 1500); //every 1.5 seconds
     document.addEventListener("keydown", moveBird);
 }
+
 
 function update() {
     requestAnimationFrame(update);
