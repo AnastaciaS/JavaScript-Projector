@@ -84,19 +84,27 @@ calculateButton.addEventListener('click', () => {
     const countInElement = document.querySelector('input[name="count-in"]:checked');
     let countIn;
 
-    if (countInElement.id === 'days') {
-        countIn = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-        countInFormatElement.textContent = 'days';
-    } else if (countInElement.id === 'hours') {
-        countIn = Math.ceil(timeDiff / (1000 * 60 * 60));
-        countInFormatElement.textContent = 'hours';
-    } else if (countInElement.id === 'minutes') {
-        countIn = Math.ceil(timeDiff / (1000 * 60));
-        countInFormatElement.textContent = 'minutes';
-    } else if (countInElement.id === 'seconds') {
-        countIn = Math.ceil(timeDiff / 1000);
-        countInFormatElement.textContent = 'seconds';
+    switch (countInElement.id) {
+        case 'days':
+            countIn = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            countInFormatElement.textContent = 'days';
+            break;
+        case 'hours':
+            countIn = Math.ceil(timeDiff / (1000 * 60 * 60));
+            countInFormatElement.textContent = 'hours';
+            break;
+        case 'minutes':
+            countIn = Math.ceil(timeDiff / (1000 * 60));
+            countInFormatElement.textContent = 'minutes';
+            break;
+        case 'seconds':
+            countIn = Math.ceil(timeDiff / 1000);
+            countInFormatElement.textContent = 'seconds';
+            break;
+        default:
+            break;
     }
+    
 
     // calculate the number of working days/weekends based on the selected type of days option
 
